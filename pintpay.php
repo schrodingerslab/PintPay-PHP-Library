@@ -2,25 +2,21 @@
 
 class PintPay {
 
-	private $api_key, $api_secret;
-	
-	
-	public function setAPI($api){
-	    if( empty( $api ) ) exit("API Key must be provided");
-	    
-	    
-		$this->api_key = $api;
-		
-	}
-
-	public function setSecret($secret){
-	    if( empty( $secret ) ) exit("API Key must be provided");
-	    
-	    
-		$this->api_secret = $secret;
-		
-	}
-	
+    private $api_key, $api_secret;
+    
+    
+    public function setAPI($api){
+        if( empty( $api ) ) exit("API Key must be provided");
+    
+        $this->api_key = $api;
+    }
+    
+    public function setSecret($secret){
+        if( empty( $secret ) ) exit("API Key must be provided");
+        
+        $this->api_secret = $secret;
+    }
+    
     public function subscriptions($secret = FALSE){
     
         if($secret === FALSE)
@@ -54,7 +50,7 @@ class PintPay {
         $request_url = $url.$req.'?api_key='.$this->api_key.'&api_secret='.$this->api_secret;
 
         $ch = curl_init();
-	    curl_setopt($ch, CURLOPT_URL, $request_url);
+        curl_setopt($ch, CURLOPT_URL, $request_url);
         curl_setopt($ch, CURLOPT_HEADER, 0); 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -75,6 +71,5 @@ class PintPay {
 
 	}
 }
-
 
 
