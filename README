@@ -1,0 +1,12 @@
+A simple PHP class that interfaces with PintPay's (http://pintpay.com) newly released API (https://pintpay.com/api_docs).
+
+Example Usage:
+
+
+require_once("pintpay.php");
+
+$pp = new PintPay();
+$pp->setAPI("API_KEY_HERE");
+$pp->setSecret("SECRET_KEY_HERE");
+
+print_r( $pp->subscriptions() );
