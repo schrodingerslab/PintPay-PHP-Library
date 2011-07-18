@@ -56,7 +56,7 @@ class PintPay {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         
-        if($type !=== FALSE && strtoupper($type) == "PUT"){
+        if($type !== FALSE && strtoupper($type) == "PUT"){
             curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
             curl_setopt($ch, CURLOPT_INFILESIZE, 0);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
